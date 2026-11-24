@@ -112,7 +112,7 @@ Simple stroked SVG, round caps. Plus/minus stroke 3 (minus 4.5 for legibility). 
 | Section reveal | 0.9s, rise 56px, line stagger 0.14s | Direction-aware (up/down), replays |
 | Letter flip | 0.5s, 2px gap (1px lowercase) | Nav + button hover |
 | Carousel | 0.9s move every 2.4s | Hero cookies |
-| Cookie tilt | up to 15°, highlight sweep | Pointer devices only |
+| Cookie tilt | up to 7.5°, highlight sweep | Pointer devices only |
 | Gift card tilt | up to 6°, card dips toward pointer | Pointer devices only |
 | Card float | 6px, 6s loop | Gift cards |
 | Cookie break | 0.5s split + crumbs | Removing from a box |
