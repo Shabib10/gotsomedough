@@ -1,0 +1,49 @@
+{
+  "color": {
+    "brand": { "pink": "#EE2B76", "pink-hover": "#D81F66" },
+    "surface": { "off-white": "#FAF7F0", "white": "#FFFFFF", "card-grey": "#F5F5F7", "peach": "#F9C9AF" },
+    "text": { "primary": "#000000", "inverse": "#FFFFFF", "muted": "#444444" },
+    "feedback": { "error": "#C0164F", "open": "#1FAE5B" },
+    "overlay": "rgba(0,0,0,0.35)"
+  },
+  "font": {
+    "family": {
+      "heading": "'Mont Heavy', 'Montserrat', sans-serif",
+      "body": "'Mont Regular', 'Montserrat', sans-serif",
+      "script": "'Comalle', 'Caveat', cursive"
+    },
+    "weight": { "heading": 900, "body": 400 },
+    "size": {
+      "display": "clamp(40px, 7vw, 72px)",
+      "h2": "clamp(36px, 6vw, 72px)",
+      "box-number": { "base": "72px", "desktop": "90px" },
+      "subline": "clamp(18px, 2.2vw, 25px)",
+      "card-title": { "base": "15px", "tablet": "20px" },
+      "body": "16px",
+      "nav": "15px",
+      "button": "14px",
+      "small": "13px"
+    },
+    "tracking": { "heading": "-0.035em", "label": "0.02em" }
+  },
+  "radius": { "pill": "999px", "card": "28px", "card-mobile": "22px", "input": "14px", "circle": "50%" },
+  "space": {
+    "section-y": "clamp(56px, 9vw, 120px)",
+    "section-x": "clamp(20px, 5vw, 64px)",
+    "grid-gap": "20px",
+    "grid-gap-mobile": "12px",
+    "content-max": "1200px"
+  },
+  "breakpoint": { "phone": "600px", "nav": "810px", "desktop": "1024px" },
+  "motion": {
+    "ease-out": "cubic-bezier(.2,.8,.2,1)",
+    "ease-in-out": "cubic-bezier(.65,0,.35,1)",
+    "duration": { "flip": "500ms", "reveal": "900ms", "entrance": "800ms", "card-flip": "800ms" }
+  },
+  "commerce": {
+    "cookie-price-inr": 200,
+    "boxes": [ { "size": 4, "price-inr": 700 }, { "size": 8, "price-inr": 1200 } ],
+    "whatsapp": "+918722201666",
+    "hours": "Tue–Sun 12:00–22:00 IST, Monday closed"
+  }
+}

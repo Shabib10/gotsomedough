@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Caveat:wght@600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&text=%E2%82%B9&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400&text=%E0%B2%AC%E0%B3%86%E0%B2%82%E0%B2%97%E0%B2%B3%E0%B3%82%E0%B2%B0%E0%B3%81&display=swap" rel="stylesheet"><style>@font-face{font-family:'Mont Heavy';src:url('./Mont-Heavy.otf') format('opentype');font-weight:100 900;font-style:normal;font-display:swap}@font-face{font-family:'Mont Regular';src:url('./Mont-Regular.otf') format('opentype');font-display:swap}@font-face{font-family:'Comalle';src:url('./Comalle.otf') format('opentype');font-display:swap}b,strong{font-family:'Mont Heavy','Montserrat',sans-serif}.cookie-day{font-size:clamp(31px,5.6vw,67px)}@media (min-width:810px){.cookie-day{font-size:clamp(26px,4.8vw,58px)}}/* GSD-TILT start: 3D cookie hover */.gsd-tilt{display:block;position:relative;border-radius:50%;transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--ts,1));transition:transform .35s cubic-bezier(.2,.8,.2,1);will-change:transform}.gsd-tilt::after{content:'';position:absolute;inset:4%;border-radius:50%;pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.45),rgba(255,255,255,0) 55%);mix-blend-mode:soft-light;opacity:var(--go,0);transition:opacity .35s}/* GSD-TILT end */.gsd-foot-grid{display:grid;grid-template-columns:1.1fr .7fr 1fr 1.4fr;gap:40px 48px}@media (max-width:1023px){.gsd-foot-grid{grid-template-columns:1fr 1fr}}@media (max-width:599px){.gsd-foot-grid{grid-template-columns:1fr;gap:36px}}/* optical centring of text inside pills/buttons: trim the text box to cap height (caps) or x-height (lowercase); older browsers get a measured nudge (Mont Heavy caps sit ~.075em high at line-height 1; Montserrat lowercase ~.09em low) */.gsd-c,.gsd-x{display:inline-block;line-height:1;position:relative}.gsd-c{top:.075em}.gsd-x{top:0}@supports (text-box:trim-both cap alphabetic){.gsd-c{top:0;text-box:trim-both cap alphabetic}.gsd-x{top:0;text-box:trim-both ex alphabetic}}/* GSD-FLIP start: word flips up, fresh copy lands 2px behind it */.gsd-flip{display:inline-block;white-space:nowrap}.gsd-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.gsd-c{--fo:calc(.76em + 2px);clip-path:inset(-.03em -.25em)}.gsd-c.gsd-m{--fo:calc(.97em + 2px);clip-path:inset(-.05em -.25em -.23em -.25em)}.gsd-x{--fo:calc(.76em + 1px);clip-path:inset(-.21em -.25em -.02em -.25em)}.fl{display:inline-block;white-space:pre}.fl>span{display:inline-block;position:relative;transition:transform .5s cubic-bezier(.65,0,.35,1)}.fl>span::after{content:attr(data-ch);position:absolute;left:0;top:var(--fo);opacity:0;transition:opacity .5s cubic-bezier(.65,0,.35,1)}a:hover .fl>span,button:hover .fl>span,a:focus-visible .fl>span,button:focus-visible .fl>span{transform:translateY(calc(-1 * var(--fo)))}a:hover .fl>span::after,button:hover .fl>span::after,a:focus-visible .fl>span::after,button:focus-visible .fl>span::after{opacity:1}@media (prefers-reduced-motion:reduce){.fl>span{transition:none}a:hover .fl>span,button:hover .fl>span{transform:none}a:hover .fl>span::after,button:hover .fl>span::after{opacity:0}}/* GSD-FLIP end *//* hero entrance: headline, subline and button rise a touch and settle */@keyframes gsdRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.gsd-rise{animation:gsdRise .8s cubic-bezier(.2,.8,.2,1) both}@media (prefers-reduced-motion:reduce){.gsd-rise{animation:none}}/* section headings: each line rises in from the direction you're scrolling, one after the other */.gsd-line{display:block}html.gsd-js .gsd-reveal .gsd-line{opacity:0;transform:translateY(56px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}html.gsd-js .gsd-reveal[data-from=top] .gsd-line{transform:translateY(-56px)}html.gsd-js .gsd-reveal[data-in] .gsd-line{opacity:1;transform:none}html.gsd-js .gsd-reveal[data-in] .gsd-line:nth-child(2){transition-delay:.14s}html.gsd-js .gsd-reveal[data-in][data-from=top] .gsd-line:nth-child(2){transition-delay:0s}html.gsd-js .gsd-reveal[data-in][data-from=top] .gsd-line:nth-child(1){transition-delay:.14s}.gsd-words .gsd-line{display:inline-block}html.gsd-js .gsd-reveal[data-in] .gsd-line:nth-child(3){transition-delay:.28s}html.gsd-js .gsd-reveal[data-in][data-from=top] .gsd-line:nth-child(3){transition-delay:0s}html.gsd-js .gsd-reveal[data-in][data-from=top].gsd-words .gsd-line:nth-child(2){transition-delay:.14s}html.gsd-js .gsd-reveal[data-in][data-from=top].gsd-words .gsd-line:nth-child(1){transition-delay:.28s}@media (prefers-reduced-motion:reduce){html.gsd-js .gsd-reveal .gsd-line{opacity:1;transform:none;transition:none}}/* gifting cards: gentle idle float; under the pointer the card presses down on the side you're over, like a real card */@keyframes gsdFloat{0%,100%{translate:0 0}50%{translate:0 -6px}}.gsd-float{animation:gsdFloat 6s ease-in-out infinite;transform:perspective(900px) rotateX(var(--crx,0deg)) rotateY(var(--cry,0deg));transition:transform .5s cubic-bezier(.2,.8,.2,1);will-change:transform}.gsd-float:nth-child(2){animation-delay:-3s}@media (prefers-reduced-motion:reduce){.gsd-float{animation:none}}/* GSD-BOX start: flip card picker */.gsd-flipcard{position:relative;display:grid;height:100%;min-height:360px;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.65,0,.35,1)}.gsd-face{grid-area:1/1;border-radius:28px;-webkit-backface-visibility:hidden;backface-visibility:hidden;min-height:0}.gsd-back{transform:rotateY(180deg)}.gsd-float>.gsd-flipcard{height:100%}@keyframes gsdDrop{0%{transform:translateY(-14px) scale(.6);opacity:0}60%{transform:translateY(2px) scale(1.06);opacity:1}100%{transform:none}}.gsd-drop{animation:gsdDrop .45s cubic-bezier(.2,.8,.2,1)}.gsd-pick-list{max-height:218px;scrollbar-width:thin;scrollbar-color:currentColor transparent;-webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 46px),rgba(0,0,0,.25));mask-image:linear-gradient(to bottom,#000 calc(100% - 46px),rgba(0,0,0,.25))}.gsd-pick-list[data-end]{-webkit-mask-image:none;mask-image:none}.gsd-pick-list::-webkit-scrollbar{width:4px}.gsd-pick-list::-webkit-scrollbar-thumb{background:currentColor;border-radius:4px;opacity:.4}.gsd-pick-wrap{position:relative;flex:1;min-height:0;display:flex;flex-direction:column}@keyframes gsdNudge{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,3px)}}.gsd-more{position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);pointer-events:none;opacity:.7;animation:gsdNudge 1.6s ease-in-out infinite;transition:opacity .3s}.gsd-pick-wrap:has(.gsd-pick-list[data-end]) .gsd-more{opacity:0}@media (prefers-reduced-motion:reduce){.gsd-more{animation:none}}button[disabled]{cursor:default!important}@media (prefers-reduced-motion:reduce){.gsd-flipcard{transition:none}.gsd-drop{animation:none}}/* tap a cookie in the box to remove it: it snaps in two and falls away */.gsd-break{position:absolute;inset:0;display:block}.gsd-half{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.gsd-half-l{clip-path:polygon(0 0,52% 0,44% 35%,56% 55%,46% 100%,0 100%);animation:gsdBreakL .5s cubic-bezier(.4,0,.6,1) forwards}.gsd-half-r{clip-path:polygon(52% 0,100% 0,100% 100%,46% 100%,56% 55%,44% 35%);animation:gsdBreakR .5s cubic-bezier(.4,0,.6,1) forwards}@keyframes gsdBreakL{0%{transform:none;opacity:1}25%{transform:translateX(-2px) rotate(-6deg)}100%{transform:translate(-8px,14px) rotate(-28deg);opacity:0}}@keyframes gsdBreakR{0%{transform:none;opacity:1}25%{transform:translateX(2px) rotate(6deg)}100%{transform:translate(8px,14px) rotate(28deg);opacity:0}}.gsd-crumb{position:absolute;left:50%;top:50%;width:4px;height:4px;margin:-2px;border-radius:50%;background:#7a4a2a;animation:gsdCrumb .5s ease-out forwards}@keyframes gsdCrumb{0%{transform:none;opacity:0}20%{opacity:1}100%{transform:translate(var(--cx),var(--cy));opacity:0}}@media (prefers-reduced-motion:reduce){.gsd-half,.gsd-crumb{animation-duration:.01s}}/* GSD-BOX end *//* picker rows stay 44px: long names drop a size and wrap to max two lines */.gsd-pk-name{line-height:1.1;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere}/* floating-nav cart: turns pink once something's in it; number flips up and the pill pops on every add */@keyframes gsdCountA{0%{transform:translateY(110%);opacity:0}60%{transform:translateY(-8%);opacity:1}100%{transform:none}}@keyframes gsdCountB{0%{transform:translateY(110%);opacity:0}60%{transform:translateY(-8%);opacity:1}100%{transform:none}}@keyframes gsdPopA{0%{transform:scale(1)}35%{transform:scale(1.14)}100%{transform:scale(1)}}@keyframes gsdPopB{0%{transform:scale(1)}35%{transform:scale(1.14)}100%{transform:scale(1)}}.gsd-count{overflow:hidden}@media (prefers-reduced-motion:reduce){.gsd-count>span{animation:none!important}}html{scroll-behavior:smooth}body{margin:0;font-family:'Mont Regular','Montserrat',sans-serif;color:#111;background:#fff}a{color:#ee2b76}a:hover{color:#cc1919}*{box-sizing:border-box}</style></helmet>
+<div style="position:relative;overflow:hidden;width:100%">
+
+<!-- NAV -->
+<header style="position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:18px clamp(20px,4vw,40px);">
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<nav style="font-family:'Mont Heavy','Montserrat',sans-serif;display:flex;align-items:center;width:100%;max-width:1100px;font-weight:900;font-size:15px;letter-spacing:.02em">
+<div style="flex:1;display:flex;justify-content:flex-end;gap:48px"><a href="#menu" style="color:#000;text-decoration:none" style-hover="opacity:.6"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_MENU }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">MENU</span></span></a><a href="#ingredients" style="color:#000;text-decoration:none" style-hover="opacity:.6"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_INGREDIENTS }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">INGREDIENTS</span></span></a></div>
+<a href="#top" aria-label="Got Some Dough home" style="width:200px;display:flex;justify-content:center;text-decoration:none"><img src="./logo.svg" alt="Got Some Dough" style="width:120px;height:auto;display:block"></a>
+<div style="flex:1;display:flex;gap:48px"><a href="#gifting" style="color:#000;text-decoration:none" style-hover="opacity:.6"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_GIFTING }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">GIFTING</span></span></a><a href="#story" style="color:#000;text-decoration:none" style-hover="opacity:.6"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_STORY }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">STORY</span></span></a></div>
+</nav>
+<button type="button" onClick="{{ openCart }}" aria-label="{{ cartLabel }}" style="font-family:'Mont Heavy','Montserrat',sans-serif;position:absolute;right:clamp(20px,4vw,40px);top:50%;margin-top:-21px;height:42px;width:{{ cartW }};justify-content:center;padding:0 {{ cartPadR }}px 0 {{ cartPadL }}px;border:0;border-radius:999px;background:#fff;color:#000;font-weight:900;font-size:14px;letter-spacing:.02em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.08)" style-hover="transform:translateY(-1px)"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11h17v8.5a1.5 1.5 0 0 1-1.5 1.5H5a1.5 1.5 0 0 1-1.5-1.5z"/><path d="M3.5 11l2.5-4h12l2.5 4"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7"/><path d="M9.5 14.5c1.4 1.6 3.6 1.6 5 0"/></svg><sc-if value="{{ cartHas }}" hint-placeholder-val="{{ false }}"><span class="gsd-c" style="min-width:10px;font-size:15px;letter-spacing:0;color:#000">{{ cartCount }}</span></sc-if></button>
+</sc-if>
+<sc-if value="{{ isCompact }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+<a href="#top" aria-label="Got Some Dough home" style="display:block;text-decoration:none"><img src="./logo.svg" alt="Got Some Dough" style="width:84px;height:auto;display:block"></a>
+<div style="display:flex;align-items:center;gap:8px"><button onClick="{{ toggleMenu }}" aria-label="Menu" style="font-family:'Mont Heavy','Montserrat',sans-serif;min-width:48px;height:48px;padding:0 4px;border:0;background:transparent;color:#fff;font-weight:900;font-size:15px;letter-spacing:.02em;cursor:pointer"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_menuIcon }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">{{ menuIcon }}</span></span></button>
+<button type="button" onClick="{{ openCart }}" aria-label="{{ cartLabel }}" style="font-family:'Mont Heavy','Montserrat',sans-serif;height:42px;width:{{ cartW }};justify-content:center;padding:0 {{ cartPadR }}px 0 {{ cartPadL }}px;border:0;border-radius:999px;background:#fff;color:#000;font-weight:900;font-size:14px;letter-spacing:.02em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.08)" style-hover="transform:translateY(-1px)"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11h17v8.5a1.5 1.5 0 0 1-1.5 1.5H5a1.5 1.5 0 0 1-1.5-1.5z"/><path d="M3.5 11l2.5-4h12l2.5 4"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7"/><path d="M9.5 14.5c1.4 1.6 3.6 1.6 5 0"/></svg><sc-if value="{{ cartHas }}" hint-placeholder-val="{{ false }}"><span class="gsd-c" style="min-width:10px;font-size:15px;letter-spacing:0;color:#000">{{ cartCount }}</span></sc-if></button></div>
+</div>
+</sc-if>
+</header>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<div style="font-family:'Mont Heavy','Montserrat',sans-serif;position:fixed;inset:0;z-index:19;background:#ee2b76;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;font-weight:900;font-size:44px;letter-spacing:-.02em">
+<a href="#menu" onClick="{{ closeMenu }}" style="color:#fff;text-decoration:none"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_MENU }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">MENU</span></span></a><a href="#ingredients" onClick="{{ closeMenu }}" style="color:#fff;text-decoration:none"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_INGREDIENTS }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">INGREDIENTS</span></span></a><a href="#gifting" onClick="{{ closeMenu }}" style="color:#fff;text-decoration:none"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_GIFTING }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">GIFTING</span></span></a><a href="#story" onClick="{{ closeMenu }}" style="color:#fff;text-decoration:none"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_STORY }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">STORY</span></span></a>
+</div>
+</sc-if>
+
+<!-- FLOATING NAV (appears on scroll up) -->
+<nav aria-label="Quick navigation" style="position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));z-index:30;max-width:calc(100% - 16px);transform:translate(-50%,{{ fnY }});opacity:{{ fnO }};visibility:{{ fnVis }};transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .3s,visibility .45s;display:flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:rgba(250,247,240,.35);-webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6);border:1px solid rgba(255,255,255,.5);box-shadow:0 10px 30px rgba(0,0,0,.12);overflow-x:auto">
+<sc-for list="{{ fnLinks }}" as="l" hint-placeholder-count="4"><a href="{{ l.href }}" onClick="{{ l.go }}" aria-current="{{ l.current }}" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;flex:none;display:inline-flex;align-items:center;height:40px;padding:0 {{ fnPad }}px;border-radius:999px;font-size:{{ fnFont }}px;letter-spacing:.02em;text-decoration:none;background:{{ l.bg }};color:{{ l.fg }};transition:background .25s,color .25s"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ l.letters }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">{{ l.label }}</span></span></a></sc-for>
+<button type="button" onClick="{{ openCart }}" aria-label="{{ cartLabel }}" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;flex:none;height:40px;width:{{ fnCartW }};justify-content:center;padding:0 {{ fnCartPadR }}px 0 {{ fnCartPadL }}px;margin-left:2px;border:0;border-radius:999px;background:{{ fnCartBg }};color:{{ fnCartFg }};display:inline-flex;align-items:center;gap:7px;cursor:pointer;transition:background .35s,color .35s;animation:{{ fnCartPop }}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11h17v8.5a1.5 1.5 0 0 1-1.5 1.5H5a1.5 1.5 0 0 1-1.5-1.5z"/><path d="M3.5 11l2.5-4h12l2.5 4"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7"/><path d="M9.5 14.5c1.4 1.6 3.6 1.6 5 0"/></svg><sc-if value="{{ cartHas }}" hint-placeholder-val="{{ false }}"><span class="gsd-c gsd-count" style="min-width:10px;font-size:14px"><span style="display:inline-block;animation:{{ fnCountFlip }}">{{ cartCount }}</span></span></sc-if></button>
+</nav>
+
+<!-- CART DRAWER -->
+<div onClick="{{ closeCart }}" aria-hidden="true" style="position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.35);opacity:{{ cartFade }};visibility:{{ cartVis }};transition:opacity .3s,visibility .3s"></div>
+<aside role="dialog" aria-modal="true" aria-label="Your cart" style="position:fixed;top:0;right:0;bottom:0;z-index:41;width:min(420px,100%);background:#faf7f0;color:#000;display:flex;flex-direction:column;transform:translateX({{ cartX }});visibility:{{ cartVis }};transition:transform .4s cubic-bezier(.2,.8,.2,1),visibility .4s;box-shadow:-12px 0 40px rgba(0,0,0,.15)">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid rgba(0,0,0,.1)">
+<h2 style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;margin:0;font-size:26px;letter-spacing:-.02em;text-transform:uppercase">{{ cartTitle }}</h2>
+<button type="button" onClick="{{ closeCart }}" aria-label="Close cart" style="width:40px;height:40px;border-radius:50%;border:0;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round"><path d="M2 2l10 10M12 2L2 12"/></svg></button>
+</div>
+<sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ false }}">
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:32px;text-align:center">
+<img src="./cookie-oatmeal-raisin.webp" alt="" aria-hidden="true" style="width:120px;height:120px;object-fit:contain;opacity:.9">
+<div style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase">Your cart is empty</div>
+<a href="#menu" onClick="{{ closeCart }}" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;display:inline-flex;align-items:center;height:44px;padding:0 24px;border-radius:999px;background:#ee2b76;color:#fff;text-decoration:none;font-size:14px;text-transform:uppercase"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_pick_a_cookie }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">Pick a cookie</span></span></a>
+</div>
+</sc-if>
+<sc-if value="{{ cartHas }}" hint-placeholder-val="{{ true }}">
+<div style="flex:1;overflow-y:auto;padding:18px 24px 24px">
+<p style="margin:0 0 6px;font-size:15px;line-height:1.5">Your cookies are almost on their way. Give everything a quick look before we take it to WhatsApp.</p>
+<sc-if value="{{ shopClosed }}" hint-placeholder-val="{{ false }}"><p style="margin:10px 0 0;padding:10px 12px;border-radius:12px;background:#fff;font-size:13px;line-height:1.45">We're closed right now (Tue–Sun, 12 PM–10 PM). Send your order anyway and we'll reply as soon as we open.</p></sc-if>
+<sc-for list="{{ cartItems }}" as="it" hint-placeholder-count="2">
+<div style="display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.08)">
+<div style="flex:none;width:64px;height:64px;border-radius:16px;background:#f5f5f7;display:flex;align-items:center;justify-content:center"><img src="{{ it.img }}" alt="" aria-hidden="true" style="width:52px;height:52px;object-fit:contain;transform:rotate({{ it.r }}deg)"></div>
+<div style="flex:1;min-width:0">
+<div style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:15px;text-transform:uppercase;line-height:1.2">{{ it.name }}</div>
+<div style="font-family:'Mont Heavy','Noto Sans','Montserrat',sans-serif;font-weight:900;font-size:14px;margin-top:4px">₹{{ it.lineTxt }}</div>
+<div style="font-size:12px;line-height:1.35;margin-top:3px;color:#444">{{ it.sub }}</div>
+</div>
+<div style="flex:none;display:flex;align-items:center;gap:4px;background:#fff;border-radius:999px;padding:3px">
+<button type="button" onClick="{{ it.dec }}" aria-label="{{ it.decLabel }}" style="width:30px;height:30px;border-radius:50%;border:0;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="#000" stroke-width="4.5" stroke-linecap="round"><path d="M3 8h10"/></svg></button>
+<span class="gsd-c" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;min-width:18px;text-align:center;font-size:14px">{{ it.qty }}</span>
+<button type="button" onClick="{{ it.inc }}" aria-label="{{ it.incLabel }}" style="width:30px;height:30px;border-radius:50%;border:0;background:#ee2b76;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></button>
+</div>
+</div>
+</sc-for>
+<form onSubmit="{{ sendOrder }}" novalidate style="margin-top:22px;display:flex;flex-direction:column;gap:18px">
+<div><label for="gsd-name" style="display:block;font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.02em;text-transform:uppercase;margin:0 0 8px">Your name</label>
+<input id="gsd-name" type="text" autocomplete="name" value="{{ fName }}" onChange="{{ setName }}" placeholder="So we know who it's for" aria-invalid="{{ nameInvalid }}" style="width:100%;box-sizing:border-box;border:1.5px solid rgba(0,0,0,.18);border-radius:14px;background:#fff;padding:12px 14px;font:16px/1.4 'Mont Regular','Montserrat',sans-serif;color:#000;outline-color:#ee2b76;border-color:{{ nameLine }}">
+<sc-if value="{{ nameErr }}" hint-placeholder-val="{{ false }}"><div role="alert" style="margin-top:6px;font-size:13px;color:#c0164f">Please add your name.</div></sc-if></div>
+<div><span style="display:block;font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.02em;text-transform:uppercase;margin:0 0 8px">How would you like your order?</span>
+<div role="group" aria-label="Pickup or delivery" style="display:flex;gap:8px">
+<sc-for list="{{ prefOpts }}" as="po" hint-placeholder-count="2"><button type="button" onClick="{{ po.pick }}" aria-pressed="{{ po.on }}" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;flex:1;height:46px;border-radius:999px;border:1.5px solid {{ po.line }};background:{{ po.bg }};color:{{ po.fg }};font-size:13px;text-transform:uppercase;letter-spacing:.02em;cursor:pointer"><span class="gsd-c">{{ po.label }}</span></button></sc-for>
+</div>
+<div style="margin-top:8px;font-size:13px;line-height:1.45;color:#444">{{ prefHint }}</div></div>
+<sc-if value="{{ isDelivery }}" hint-placeholder-val="{{ false }}"><div><label for="gsd-addr" style="display:block;font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.02em;text-transform:uppercase;margin:0 0 8px">Delivery address</label>
+<textarea id="gsd-addr" rows="3" autocomplete="street-address" value="{{ fAddr }}" onChange="{{ setAddr }}" placeholder="Flat, street, area, landmark" aria-invalid="{{ addrInvalid }}" style="width:100%;box-sizing:border-box;border:1.5px solid rgba(0,0,0,.18);border-radius:14px;background:#fff;padding:12px 14px;font:16px/1.4 'Mont Regular','Montserrat',sans-serif;color:#000;outline-color:#ee2b76;resize:vertical;border-color:{{ addrLine }}"></textarea>
+<sc-if value="{{ addrErr }}" hint-placeholder-val="{{ false }}"><div role="alert" style="margin-top:6px;font-size:13px;color:#c0164f">Please add a delivery address.</div></sc-if></div></sc-if>
+<div><label for="gsd-notes" style="display:block;font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.02em;text-transform:uppercase;margin:0 0 8px">Anything else? <span style="font-family:'Mont Regular','Montserrat',sans-serif;font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+<textarea id="gsd-notes" rows="3" value="{{ fNotes }}" onChange="{{ setNotes }}" placeholder="Preferred day and time, a gift note…" style="width:100%;box-sizing:border-box;border:1.5px solid rgba(0,0,0,.18);border-radius:14px;background:#fff;padding:12px 14px;font:16px/1.4 'Mont Regular','Montserrat',sans-serif;color:#000;outline-color:#ee2b76;resize:vertical"></textarea></div>
+</form>
+</div>
+<div style="padding:18px 24px 24px;border-top:1px solid rgba(0,0,0,.1);display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:15px;text-transform:uppercase">Total</span><span style="font-family:'Mont Heavy','Noto Sans','Montserrat',sans-serif;font-weight:900;font-size:22px">₹{{ cartTotal }}</span></div>
+<p style="margin:0;font-size:13px;line-height:1.45;color:#444">Your order isn't confirmed just yet. Send us your selection on WhatsApp and we'll take it from there.</p>
+<button type="button" onClick="{{ sendOrder }}" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;display:flex;align-items:center;justify-content:center;gap:10px;height:54px;border-radius:999px;border:0;background:#ee2b76;color:#fff;font-size:15px;text-transform:uppercase;letter-spacing:.02em;cursor:pointer" style-hover="background:#d81f66"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span class="gsd-c">Continue on WhatsApp</span></button>
+</div>
+</sc-if>
+</aside>
+
+<!-- HERO -->
+<section id="top" style="background:{{ pink }};padding-top:{{ heroPad }}px;text-align:center;position:relative">
+<h1 class="gsd-rise" style="animation-delay:.05s;margin:0 auto;padding:0 20px;max-width:1000px;color:#fff;font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:clamp(40px,7vw,72px);line-height:1.05;letter-spacing:-.035em">We take cookies seriously</h1>
+<p class="gsd-rise" style="animation-delay:.17s;margin:14px 0 0;color:#fff;font-family:'Mont Regular','Montserrat',sans-serif;font-size:clamp(18px,2.2vw,25px)">Freshly baked. 100% eggless.</p>
+<a href="#menu" class="gsd-rise" style="animation-delay:.29s;display:inline-flex;align-items:center;justify-content:center;margin:24px 0 0;height:50px;padding:0 38px;border:2px solid #fff;border-radius:999px;color:#fff;text-decoration:none;font-size:clamp(18px,2.2vw,24px)" style-hover="background:#fff;color:#ee2b76"><span class="gsd-x"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_order_now }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">order now</span></span></a>
+<div style="position:relative;height:{{ stageH }}px;overflow:hidden">
+<div aria-hidden="true" style="position:absolute;left:0;right:0;top:{{ halfOff }}px;bottom:0;background:#faf7f0"></div>
+<sc-for list="{{ track }}" as="c" hint-placeholder-count="5">
+<div style="position:absolute;left:50%;top:{{ off }}px;width:{{ size }}px;margin-left:-{{ halfSize }}px;transform:translateX({{ c.x }}px) scale({{ c.s }});transition:{{ c.tr }};opacity:{{ c.o }}">
+<span class="gsd-tilt"><img src="{{ c.img }}" alt="{{ c.name }} cookie" draggable="false" style="width:{{ size }}px;height:{{ size }}px;object-fit:contain;display:block;transform:rotate({{ c.r }}deg);filter:drop-shadow(0 14px 18px rgba(0,0,0,.28))"></span>
+<div style="font-family:'Mont Heavy','Montserrat',sans-serif;margin-top:12px;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:.02em">{{ c.name }}</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- MARQUEE -->
+<div style="font-family:'Mont Heavy','Montserrat',sans-serif;background:#faf7f0;display:flex;flex-wrap:wrap;gap:8px 28px;padding:16px 20px 48px;font-weight:900;font-size:clamp(18px,3vw,32px);letter-spacing:-.02em;text-transform:uppercase;justify-content:center">
+<span>made for sharing</span>
+</div>
+
+<!-- MENU -->
+<section id="menu" style="padding:clamp(56px,9vw,120px) clamp(20px,5vw,64px);background:#fff">
+<div style="max-width:1200px;margin:0 auto">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px">
+<div><h2 class="gsd-reveal" style="font-family:'Mont Heavy','Montserrat',sans-serif;margin:0 0 0;font-weight:900;font-size:clamp(36px,6vw,72px);line-height:1;letter-spacing:-.035em"><span class="gsd-line">Pick your</span><span class="gsd-line">cookie.</span></h2></div>
+</div>
+<div style="margin-top:48px;display:grid;grid-template-columns:{{ menuCols }};gap:{{ menuGap }}px">
+<sc-for list="{{ shown }}" as="k" hint-placeholder-count="6">
+<article style="background:#f5f5f7;border-radius:{{ cardRad }}px;padding:{{ cardPad }}px;display:flex;flex-direction:column;gap:16px;transition:transform .25s" style-hover="transform:translateY(-6px) rotate(-.6deg)">
+<span class="gsd-tilt" style="width:78%;align-self:center"><img src="{{ k.img }}" alt="{{ k.name }} cookie" style="aspect-ratio:1;width:100%;object-fit:contain;display:block;transform:rotate({{ k.r }}deg);filter:drop-shadow(0 12px 14px rgba(0,0,0,.22))"></span>
+<div style="flex:1;display:flex;flex-direction:column"><div style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:{{ cardName }}px;line-height:1.15;text-transform:uppercase;letter-spacing:-.01em">{{ k.name }}</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:8px"><div style="font-family:'Mont Heavy','Noto Sans','Montserrat',sans-serif;font-weight:900;font-size:18px">₹200</div>
+<button type="button" onClick="{{ k.add }}" aria-label="{{ k.addLabel }}" style="flex:none;width:38px;height:38px;border-radius:50%;border:0;background:#ee2b76;color:#fff;font:900 21px/1 'Mont Heavy','Montserrat',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:transform .15s" style-hover="transform:scale(1.08)"><sc-if value="{{ k.isAdded }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg></sc-if><sc-if value="{{ k.notAdded }}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></sc-if></button></div></div>
+</article>
+</sc-for>
+</div></div>
+</section>
+
+<!-- GIFTING -->
+<section id="gifting" style="background:#f9c9af;padding:clamp(56px,9vw,120px) clamp(20px,5vw,64px)">
+<div style="max-width:1200px;margin:0 auto">
+<h2 class="gsd-reveal" style="font-family:'Mont Heavy','Montserrat',sans-serif;margin:0 0 0;font-weight:900;font-size:clamp(36px,6vw,72px);line-height:1;letter-spacing:-.035em"><span class="gsd-line">Treat for friends.</span><span class="gsd-line">And more.</span></h2>
+<div style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+<sc-for list="{{ boxes }}" as="b" hint-placeholder-count="2"><div class="gsd-float" style="border-radius:28px;min-height:360px">
+<div class="gsd-flipcard" data-gsd-box="flip card: front = offer, back = flavour picker" style="transform:rotateY({{ b.rot }}deg)">
+<div class="gsd-face" aria-hidden="{{ b.flipped }}" style="background:{{ b.bg }};color:{{ b.fg }};padding:clamp(24px,3vw,36px);display:flex;flex-direction:column">
+<div style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:{{ boxNum }}px;line-height:1;letter-spacing:-.035em;margin-left:calc(-0.045em + 1.35px)">{{ b.n }}</div>
+<div style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;margin-top:14px">{{ b.t }}</div>
+<div style="font-size:14px;margin-top:6px;line-height:1.4">{{ b.d }}</div>
+<div style="margin-top:auto;padding-top:28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px">
+<div style="font-family:'Mont Heavy','Noto Sans','Montserrat',sans-serif;font-weight:900;font-size:24px">{{ b.price }}</div>
+<button type="button" onClick="{{ b.open }}" aria-expanded="{{ b.flipped }}" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 8px 0 22px;border-radius:999px;background:{{ b.btnBg }};color:{{ b.btnFg }};text-decoration:none;font-size:14px;text-transform:uppercase;letter-spacing:.02em" style-hover="opacity:.85"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_build_your_box }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">Build your box</span></span><span style="width:30px;height:30px;border-radius:50%;background:{{ b.dotBg }};display:inline-flex;align-items:center;justify-content:center"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="{{ b.btnFg }}" stroke-width="3" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span></button>
+</div></div>
+<div class="gsd-face gsd-back" aria-hidden="{{ b.notFlipped }}" style="background:{{ b.bg }};color:{{ b.fg }};padding:clamp(18px,2vw,22px);display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+<div style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:18px;text-transform:uppercase">{{ b.t }} · {{ b.price }}</div>
+<button type="button" onClick="{{ b.close }}" aria-label="Back to box details" style="flex:none;width:36px;height:36px;border-radius:50%;border:0;background:{{ b.chipBg }};color:{{ b.fg }};cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M2 2l10 10M12 2L2 12"/></svg></button>
+</div>
+<div aria-label="{{ b.progress }}" role="img" style="display:grid;grid-template-columns:{{ b.slotCols }};gap:5px;justify-content:start">
+<sc-for list="{{ b.slots }}" as="sl" hint-placeholder-count="4"><div style="width:100%;aspect-ratio:1;border-radius:50%;border:2px dashed {{ b.slotLine }};display:flex;align-items:center;justify-content:center"><sc-if value="{{ sl.on }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ sl.remove }}" aria-label="{{ sl.label }}" title="Tap to remove" style="position:relative;width:100%;height:100%;border:0;padding:0;background:none;cursor:pointer;display:block"><sc-if value="{{ sl.whole }}" hint-placeholder-val="{{ true }}"><img class="gsd-drop" src="{{ sl.img }}" alt="" style="width:100%;height:100%;object-fit:contain;transform:rotate({{ sl.r }}deg)"></sc-if><sc-if value="{{ sl.breaking }}" hint-placeholder-val="{{ false }}"><span class="gsd-break" aria-hidden="true" style="transform:rotate({{ sl.r }}deg)"><img class="gsd-half gsd-half-l" src="{{ sl.img }}" alt=""><img class="gsd-half gsd-half-r" src="{{ sl.img }}" alt=""><i class="gsd-crumb" style="--cx:-9px;--cy:12px"></i><i class="gsd-crumb" style="--cx:2px;--cy:16px"></i><i class="gsd-crumb" style="--cx:10px;--cy:10px"></i></span></sc-if></button></sc-if></div></sc-for>
+</div>
+<div class="gsd-pick-wrap"><div class="gsd-pick-list" onScroll="{{ listScroll }}" style="min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:6px;margin:0 -4px;padding:0 4px">
+<sc-for list="{{ b.picks }}" as="pk" hint-placeholder-count="10"><div style="flex:none;height:44px;box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:6px 6px 6px 8px;border-radius:14px;background:{{ b.chipBg }}">
+<img src="{{ pk.img }}" alt="" aria-hidden="true" style="flex:none;width:28px;height:28px;object-fit:contain;transform:rotate({{ pk.r }}deg)">
+<div class="gsd-pk-name" style="flex:1;min-width:0;font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;text-transform:uppercase;font-size:12px">{{ pk.name }}</div>
+<button type="button" onClick="{{ pk.dec }}" disabled="{{ pk.noDec }}" aria-label="{{ pk.decLabel }}" style="flex:none;width:32px;height:32px;border-radius:50%;border:0;background:transparent;color:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;opacity:{{ pk.decO }}"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"><path d="M3 8h10"/></svg></button>
+<span class="gsd-c" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;min-width:14px;text-align:center;font-size:14px">{{ pk.qty }}</span>
+<button type="button" onClick="{{ pk.inc }}" disabled="{{ pk.noInc }}" aria-label="{{ pk.incLabel }}" style="flex:none;width:32px;height:32px;border-radius:50%;border:0;background:{{ b.btnBg }};color:{{ b.btnFg }};cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;opacity:{{ pk.incO }}"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></button>
+</div></sc-for>
+</div>
+<svg class="gsd-more" aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l5 5 5-5"/></svg></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap;white-space:nowrap;min-height:44px">
+<div style="font-size:13px"><span style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;">{{ b.picked }}</span> of {{ b.size }} picked · <button type="button" onClick="{{ b.surprise }}" style="border:0;background:none;padding:0;color:inherit;font:inherit;font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;text-decoration:underline;text-underline-offset:3px;cursor:pointer">Surprise me</button></div>
+<sc-if value="{{ b.notFull }}" hint-placeholder-val="{{ true }}"><span aria-live="polite" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.02em;text-transform:uppercase;color:{{ b.accent }}">{{ b.addLabel }}</span></sc-if>
+<sc-if value="{{ b.isFull }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ b.addBox }}" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;flex:none;border:0;height:44px;padding:0 18px;border-radius:999px;background:{{ b.btnBg }};color:{{ b.btnFg }};font-size:13px;text-transform:uppercase;letter-spacing:.02em;cursor:pointer"><span class="gsd-c">Add to cart</span></button></sc-if>
+</div>
+</div>
+</div>
+</div></sc-for>
+</div></div>
+</section>
+
+<!-- INGREDIENTS -->
+<section id="ingredients" style="background:#faf7f0;color:#000;padding:clamp(56px,9vw,120px) clamp(20px,5vw,64px)">
+<div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,6vw,80px);align-items:center">
+<div>
+<h2 class="gsd-reveal" style="font-family:'Mont Heavy','Montserrat',sans-serif;margin:0 0 24px;font-weight:900;font-size:clamp(36px,6vw,72px);line-height:1;letter-spacing:-.035em"><span class="gsd-line">A proper cookie.</span></h2>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ ingredients }}" as="i" hint-placeholder-count="4"><div style="display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-top:1px solid rgba(0,0,0,.2)"><span style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase">{{ i.t }}</span><span style="max-width:260px;text-align:right;font-size:15px;line-height:1.45">{{ i.d }}</span></div></sc-for>
+</div></div>
+<img src="./ingredients.jpg" alt="Cookie ingredients laid out: dark chocolate chunks, butter, sea salt, oats, flour, vanilla, raisins and baking powder" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:200px 200px 28px 28px">
+</div>
+</section>
+
+<!-- STORY -->
+<section id="story" style="background:#faf7f0;color:#000;padding:clamp(56px,9vw,120px) clamp(20px,5vw,64px) clamp(112px,18vw,240px)">
+<div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,6vw,80px);align-items:center">
+<div>
+<h2 class="gsd-reveal" style="font-family:'Mont Heavy','Montserrat',sans-serif;margin:0 0 24px;font-weight:900;font-size:clamp(36px,6vw,72px);line-height:1;letter-spacing:-.035em"><span class="gsd-line">Baked to Brag.</span></h2>
+<p style="font-size:clamp(16px,1.6vw,19px);line-height:1.6;margin:0 0 16px;max-width:520px">We’re a speciality gourmet cookie bakehouse. Some flavours feel like old friends. Others take a bite to get to know. We like having both in the box.</p>
+<p style="font-size:clamp(16px,1.6vw,19px);line-height:1.6;margin:0;max-width:520px">Got Some Dough is a brand by <b>Urban Orchard</b>, the house of food brands in Bengaluru.</p>
+</div></div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#ee2b76;color:#fff;padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px) {{ footPadB }}px;text-align:center">
+<div class="cookie-day gsd-reveal gsd-words" style="font-family:'Comalle','Caveat',cursive;line-height:1"><span class="gsd-line">come</span> <span class="gsd-line">on</span> <span class="gsd-line" style="font-family:'Mont Regular','Montserrat',sans-serif">over.</span></div>
+<div class="gsd-foot" style="max-width:1200px;margin:clamp(56px,8vw,88px) auto 0;text-align:left">
+<div class="gsd-foot-grid">
+<div class="gsd-foot-brand" style="display:flex;flex-direction:column;justify-content:space-between;gap:28px">
+<img src="./logo.svg" alt="Got Some Dough" style="width:130px;height:auto;display:block">
+<div><div style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#000">© 2026 | Got Some Dough</div>
+<div style="font-size:15px;margin-top:6px;line-height:1.5">A brand by Urban Orchard,<br>Bengaluru</div></div>
+</div>
+<nav aria-label="Footer" style="display:flex;flex-direction:column;gap:14px;font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:15px;letter-spacing:.02em">
+<a href="#menu" style="color:#fff;text-decoration:none" style-hover="color:#000"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_MENU }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">MENU</span></span></a>
+<a href="#ingredients" style="color:#fff;text-decoration:none" style-hover="color:#000"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_INGREDIENTS }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">INGREDIENTS</span></span></a>
+<a href="#gifting" style="color:#fff;text-decoration:none" style-hover="color:#000"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_GIFTING }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">GIFTING</span></span></a>
+<a href="#story" style="color:#fff;text-decoration:none" style-hover="color:#000"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_STORY }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">STORY</span></span></a>
+</nav>
+<div style="display:flex;flex-direction:column;gap:32px">
+<div><h3 style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#000;margin:0 0 14px">Find us</h3>
+<address style="font-style:normal;font-size:16px;line-height:1.6"><a href="https://www.google.com/maps/search/?api=1&amp;query=300%2C%205th%20Cross%20Rd%2C%206th%20Block%2C%20Koramangala%2C%20Bengaluru%2C%20Karnataka%20560095" target="_blank" rel="noopener" style="color:#fff;text-decoration:none" style-hover="color:#000">300, 5th Cross Rd, 6th Block,<br>Koramangala, Bengaluru,<br>Karnataka 560095</a></address></div>
+<div><h3 style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#000;margin:0 0 14px">Operating hours</h3>
+<div style="font-size:16px;line-height:1.6">Tuesday–Sunday 12 PM–10 PM<br>Monday closed</div>
+<span style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;display:inline-flex;align-items:center;gap:8px;margin-top:12px;height:30px;padding:0 14px;border-radius:999px;background:{{ openBg }};color:{{ openFg }};font-size:12px;letter-spacing:.04em;text-transform:uppercase"><span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:{{ openDot }}"></span><span class="gsd-c">{{ openLabel }}</span></span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:22px">
+<div style="margin-bottom:10px"><h3 style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#000;margin:0 0 14px">Follow us</h3>
+<a href="https://www.instagram.com/gotsomedough/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:18px" style-hover="color:#000"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@gotsomedough</a></div>
+<div><h3 style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#000;margin:0 0 14px">Come on over</h3>
+<p style="font-size:clamp(18px,1.6vw,20px);line-height:1.45;margin:0">Cookies taste even better when you don't have to wait for them. Drop by, say hello, and pick up something good.</p>
+<a href="mailto:hello@gotsomedough.com" style="display:inline-block;margin-top:14px;color:#000;text-decoration:none;font-size:16px;line-height:1.6;font-weight:500" style-hover="color:#fff">hello@gotsomedough.com</a></div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px">
+<a href="https://www.google.com/maps/search/?api=1&amp;query=300%2C%205th%20Cross%20Rd%2C%206th%20Block%2C%20Koramangala%2C%20Bengaluru%2C%20Karnataka%20560095" aria-label="Get directions: see Got Some Dough on Google Maps (opens in a new tab)" target="_blank" rel="noopener" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;display:inline-flex;align-items:center;gap:12px;height:50px;padding:0 22px;border-radius:999px;background:#fff;color:#ee2b76;text-decoration:none;font-size:14px;text-transform:uppercase;letter-spacing:.02em" style-hover="background:#000;color:#fff"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_get_directions }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">Get directions</span></span></a>
+<a href="https://wa.me/918722201666" target="_blank" rel="noopener" aria-label="WhatsApp us (opens WhatsApp)" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;color:#fff;font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none" style-hover="color:#000"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_whatsapp_us }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">WhatsApp us</span></span></a>
+</div>
+</div>
+</div>
+<div style="margin-top:clamp(40px,6vw,64px);padding-top:22px;border-top:1px solid rgba(255,255,255,.45);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px">
+<span>© 2026 Urban Orchard F&amp;B Ventures LLP</span>
+<span>Baked with love in <span lang="kn" style="font-family:'Noto Sans Kannada','Mont Regular',sans-serif">ಬೆಂಗಳೂರು</span></span>
+</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;pink&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#ee2b76&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tilt3d&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { w: 1280, idx: 0, menuOpen: false, filter: 'All', added: '', cart: {}, cartOpen: false, fnShow: false, active: '', build: { 4: {}, 8: {} }, flip: { 4: false, 8: false }, cartBoxes: [], breaking: null /* GSD-BOX */, fName: '', fPref: 'Pickup', fAddr: '', fNotes: '', tried: false };
+  // menu: 10 flavours, ₹200 each (photos are transparent PNG cut-outs)
+  cookies = [
+    { name: 'Original Chocolate', img: './cookie-original-chocolate.webp' },
+    { name: 'After Dark', img: './cookie-after-dark.webp' },
+    { name: 'Nutella', img: './cookie-nutella.webp' },
+    { name: 'Lime Blueberry', img: './cookie-lime-blueberry.webp' },
+    { name: 'Matcha & Strawberry', img: './cookie-matcha-strawberry.webp' },
+    { name: 'Apple Crumble', img: './cookie-apple-crumble.webp' },
+    { name: 'Coconut & Raspberry', img: './cookie-coconut-raspberry.webp' },
+    { name: 'Biscoff', img: './cookie-biscoff.webp' },
+    { name: 'Oatmeal Raisin', img: './cookie-oatmeal-raisin.webp' },
+    { name: 'Pistachio Chocolate', img: './cookie-pistachio-chocolate.webp' }
+  ];
+  componentDidMount() {
+    try { const saved = JSON.parse(localStorage.getItem('gsd-order') || 'null'); if (saved) this.setState(saved); } catch (e) {}
+    // reveal section headings as they scroll into view
+    document.documentElement.classList.add('gsd-js');
+    // checks the live headings on every scroll/update (robust if the page re-renders a heading)
+    this.revealCheck = () => {
+      const vh = window.innerHeight;
+      document.querySelectorAll('.gsd-reveal').forEach(el => {
+        const r = el.getBoundingClientRect(), inView = r.top < vh * 0.92 && r.bottom > vh * 0.08;
+        if (inView && !el.hasAttribute('data-in')) el.setAttribute('data-in', '');
+        else if (!inView && el.hasAttribute('data-in')) { el.removeAttribute('data-in'); el.setAttribute('data-from', r.top < 0 ? 'top' : 'bottom'); }
+      });
+    };
+    this.revealT = setTimeout(this.revealCheck, 60);
+    window.addEventListener('scroll', () => requestAnimationFrame(this.revealCheck), { passive: true });
+    window.addEventListener('resize', this.revealCheck);
+    // floating nav: show on scroll up (past the hero), hide on scroll down; track the section in view
+    this.lastY = window.scrollY; this.navLock = 0;
+    this.onScroll = () => {
+      if (this.scrollRaf) return;
+      this.scrollRaf = requestAnimationFrame(() => {
+        this.scrollRaf = 0;
+        const y = window.scrollY, dy = y - this.lastY; this.lastY = y;
+        let show = this.state.fnShow;
+        // appears once you scroll down past the hero, and stays until you're back near the top
+        if (y < 320) show = false;
+        else if (dy > 2) show = true;
+        let active = '';
+        // active = the section whose top is closest above the 45% line (works whatever order the sections are in)
+        let best = -Infinity;
+        ['menu', 'ingredients', 'gifting', 'story'].forEach(id => { const el = document.getElementById(id); if (!el) return; const t = el.getBoundingClientRect().top; if (t <= window.innerHeight * 0.45 && t > best) { best = t; active = id; } });
+        if (show !== this.state.fnShow || active !== this.state.active) this.setState({ fnShow: show, active });
+      });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onKey = e => { if (e.key === 'Escape' && this.state.cartOpen) this.setState({ cartOpen: false }); };
+    window.addEventListener('keydown', this.onKey);
+    // GSD-TILT start: cookies lean toward the pointer, with a moving highlight
+    this.tiltOn = () => (this.props.tilt3d ?? true) && !matchMedia('(prefers-reduced-motion: reduce), (pointer: coarse)').matches;
+    this.onTilt = e => {
+      if (this.tiltRaf) return;
+      this.tiltRaf = requestAnimationFrame(() => {
+        this.tiltRaf = 0;
+        document.querySelectorAll('.gsd-tilt').forEach(el => {
+          const r = el.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+          const near = this.tiltOn() && e.type === 'pointermove' && Math.abs(x) < .7 && Math.abs(y) < .7;
+          el.style.setProperty('--ry', near ? (x * 15).toFixed(2) + 'deg' : '0deg');
+          el.style.setProperty('--rx', near ? (-y * 15).toFixed(2) + 'deg' : '0deg');
+          el.style.setProperty('--ts', near ? '1.06' : '1');
+          el.style.setProperty('--go', near ? '1' : '0');
+          el.style.setProperty('--gx', ((x + .5) * 100).toFixed(1) + '%');
+          el.style.setProperty('--gy', ((y + .5) * 100).toFixed(1) + '%');
+        });
+      });
+    };
+    window.addEventListener('pointermove', this.onTilt, { passive: true });
+    // gifting cards: the side/corner under the pointer dips away (max ~6deg)
+    this.onCardTilt = e => {
+      document.querySelectorAll('.gsd-float').forEach(el => {
+        const r = el.getBoundingClientRect();
+        const inside = e.type === 'pointermove' && e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom && this.tiltOn();
+        const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        el.style.setProperty('--cry', inside ? (x * 12).toFixed(2) + 'deg' : '0deg');
+        el.style.setProperty('--crx', inside ? (-y * 12).toFixed(2) + 'deg' : '0deg');
+      });
+    };
+    window.addEventListener('pointermove', this.onCardTilt, { passive: true });
+    document.documentElement.addEventListener('pointerleave', this.onCardTilt);
+    document.documentElement.addEventListener('pointerleave', this.onTilt);
+    // GSD-TILT end
+    this.onR = () => this.setState({ w: window.innerWidth });
+    this.onR(); window.addEventListener('resize', this.onR);
+    this.t = setInterval(() => this.setState(s => ({ idx: s.idx + 1 })), 2400);
+  }
+  componentDidUpdate(_, prev) {
+    this.revealCheck && this.revealCheck();
+    // keep the cart and form if the visitor hops to WhatsApp and comes back
+    const st = this.state, keep = ['cart', 'cartBoxes', 'fName', 'fPref', 'fAddr', 'fNotes'];
+    if (keep.some(k => prev[k] !== st[k])) { try { localStorage.setItem('gsd-order', JSON.stringify(Object.fromEntries(keep.map(k => [k, st[k]])))); } catch (e) {} }
+  }
+  componentWillUnmount() { clearTimeout(this.revealT); window.removeEventListener('resize', this.revealCheck); window.removeEventListener('resize', this.onR); clearInterval(this.t); window.removeEventListener('keydown', this.onKey); window.removeEventListener('scroll', this.onScroll); cancelAnimationFrame(this.scrollRaf);
+    window.removeEventListener('pointermove', this.onTilt); window.removeEventListener('pointermove', this.onCardTilt); document.documentElement.removeEventListener('pointerleave', this.onCardTilt); document.documentElement.removeEventListener('pointerleave', this.onTilt); cancelAnimationFrame(this.tiltRaf); /* GSD-TILT */ clearTimeout(this.addT); clearTimeout(this.boxT); clearTimeout(this.brkT); }
+  renderVals() {
+    const { w, idx, menuOpen, filter } = this.state, N = this.cookies.length;
+    const pink = this.props.pink ?? '#ee2b76';
+    const PRICE = 200, cart = this.state.cart;
+    const setQty = (n, q) => this.setState(s => { const c = { ...s.cart }; if (q > 0) c[n] = q; else delete c[n]; return { cart: c }; });
+    const cartItems = this.cookies.map((c, i) => ({ c, i })).filter(({ c }) => cart[c.name]).map(({ c, i }) => ({
+      name: c.name, img: c.img, qty: cart[c.name], line: cart[c.name] * PRICE, r: ((i * 37) % 21 - 10),
+      inc: () => setQty(c.name, cart[c.name] + 1), dec: () => setQty(c.name, cart[c.name] - 1),
+      incLabel: 'Add one more ' + c.name, decLabel: cart[c.name] === 1 ? 'Remove ' + c.name : 'Remove one ' + c.name }));
+    cartItems.forEach(it => { it.lineTxt = (it.line).toLocaleString('en-IN'); it.sub = ''; });
+    // GSD-BOX: built boxes sit in the cart as one line each, flavours listed underneath
+    this.state.cartBoxes.forEach((bx, k) => {
+      const removeBox = () => this.setState(s => ({ cartBoxes: s.cartBoxes.filter((_, j) => j !== k) }));
+      const dupBox = () => this.setState(s => ({ cartBoxes: [...s.cartBoxes, { ...bx, id: Date.now() }] }));
+      cartItems.push({ name: 'Box of ' + bx.size, img: (this.cookies.find(c => bx.items[c.name]) || this.cookies.find(c => c.name === 'Oatmeal Raisin')).img, qty: 1, line: bx.price, lineTxt: bx.price.toLocaleString('en-IN'), r: 0,
+        sub: Object.entries(bx.items).map(([n, q]) => q + '× ' + n).join(', '),
+        inc: dupBox, dec: removeBox, incLabel: 'Add another Box of ' + bx.size, decLabel: 'Remove this Box of ' + bx.size });
+    });
+    const cartCount = cartItems.reduce((a, it) => a + it.qty, 0);
+    const cartSum = cartItems.reduce((a, it) => a + it.line, 0);
+    const size = w < 600 ? 150 : w < 1000 ? 210 : 260, pitch = size * 1.5;
+    const cur = ((idx % N) + N) % N;
+    const track = this.cookies.map((c, i) => {
+      let d = (((i - idx) % N) + N) % N; if (d > N / 2) d -= N;
+      // the cookie that wraps from the far left to the far right jumps there instantly and hidden
+      const wrap = d === Math.floor(N / 2) && idx > 0;
+      return { ...c, r: ((i * 37) % 21 - 10), x: d * pitch, s: 1, o: wrap ? 0 : 1,
+        tr: wrap ? 'none' : 'transform 900ms cubic-bezier(.65,0,.35,1), opacity 300ms ease' };
+    });
+    const tags = ['All', 'Vegan', 'Gluten-free', 'Classic'];
+    return {
+      pink, size, halfSize: size / 2, half: size / 2, pitch, track,
+      stageH: size + 110 + 36, off: 36, halfOff: size / 2 + 36, heroPad: w >= 810 ? 183 : 186,
+      fnY: this.state.fnShow ? '0' : '140%', fnO: this.state.fnShow ? 1 : 0, fnVis: this.state.fnShow ? 'visible' : 'hidden',
+      fnPad: w < 480 ? 9 : 16, fnFont: w < 480 ? 11 : 13,
+      fnLinks: [['menu', 'MENU'], ['ingredients', 'INGREDIENTS'], ['gifting', 'GIFTING'], ['story', 'STORY']].map(([id, label]) => {
+        const on = this.state.active === id;
+        return { href: '#' + id, label, letters: [...label].map(ch => ({ ch, dl: 0 })) /* GSD-FLIP */, current: on ? 'location' : 'false', bg: on ? '#ee2b76' : 'transparent', fg: on ? '#fff' : '#000',
+          go: () => { this.navLock = Date.now() + 1200; this.setState({ active: id, fnShow: true }); } };
+      }),
+      // menu grid: 2 columns on phones and tablets, auto-fit on desktop
+      menuCols: w < 1024 ? 'repeat(2,minmax(0,1fr))' : 'repeat(auto-fit,minmax(260px,1fr))',
+      boxNum: w >= 1024 ? 90 : 72,
+      // footer bottom: tight on desktop (floating nav sits between the two bottom links); extra room on smaller screens where it would cover them
+      footPadB: w >= 1024 ? 24 : 96,
+      menuGap: w < 600 ? 12 : 20, cardPad: w < 600 ? 14 : 24, cardRad: w < 600 ? 22 : 28, cardName: w < 600 ? 15 : 20,
+      // empty cart = icon-only perfect circle; with items = pill with count
+      cartW: cartCount ? 'auto' : '42px', cartPadL: cartCount ? 13 : 0, cartPadR: cartCount ? 16 : 0,
+      fnCartW: cartCount ? 'auto' : '40px', fnCartPadL: cartCount ? 11 : 0, fnCartPadR: cartCount ? 14 : 0,
+      // footer open/closed badge — Bengaluru time, Tue–Sun 12:00–22:00
+      ...(() => { const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', weekday: 'short', hour: 'numeric', hour12: false }).formatToParts(new Date());
+        const day = parts.find(x => x.type === 'weekday').value, hr = +parts.find(x => x.type === 'hour').value % 24;
+        const open = day !== 'Mon' && hr >= 12 && hr < 22;
+        return { openLabel: open ? 'Open now' : 'Closed', openBg: open ? '#fff' : '#000', openFg: open ? '#000' : '#fff', openDot: open ? '#1fae5b' : '#ee2b76' }; })(),
+      // GSD-FLIP: letters for the hover flip (all together, eased)
+      ...(() => { const fl = t => [...t].map((ch, i) => ({ ch: ch === ' ' ? '\u00a0' : ch, dl: 0 }));
+        return { fx_menuIcon: fl(menuOpen ? 'CLOSE' : 'MENU'), fx_MENU: fl('MENU'), fx_INGREDIENTS: fl('INGREDIENTS'), fx_GIFTING: fl('GIFTING'), fx_STORY: fl('STORY'), fx_pick_a_cookie: fl('Pick a cookie'), fx_checkout: fl('Checkout'), fx_order_now: fl('order now'), fx_build_your_box: fl('Build your box'), fx_get_directions: fl('Get directions'), fx_whatsapp_us: fl('WhatsApp us'),  }; })(),
+      listScroll: e => { const el = e.currentTarget; if (el.scrollTop + el.clientHeight >= el.scrollHeight - 4) el.setAttribute('data-end', ''); else el.removeAttribute('data-end'); },
+      // checkout → pre-drafted WhatsApp message to +91 87222 01666
+      cartTitle: cartItems.length ? 'Looking good.' : 'Your cart',
+      shopClosed: (() => { const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', weekday: 'short', hour: 'numeric', hour12: false }).formatToParts(new Date());
+        const day = parts.find(x => x.type === 'weekday').value, hr = +parts.find(x => x.type === 'hour').value % 24; return !(day !== 'Mon' && hr >= 12 && hr < 22); })(),
+      fName: this.state.fName, fAddr: this.state.fAddr, fNotes: this.state.fNotes,
+      setName: e => this.setState({ fName: e.target.value }), setAddr: e => this.setState({ fAddr: e.target.value }), setNotes: e => this.setState({ fNotes: e.target.value }),
+      nameErr: this.state.tried && !this.state.fName.trim(), nameInvalid: String(this.state.tried && !this.state.fName.trim()),
+      nameLine: this.state.tried && !this.state.fName.trim() ? '#c0164f' : 'rgba(0,0,0,.18)',
+      isDelivery: this.state.fPref === 'Delivery',
+      addrErr: this.state.tried && this.state.fPref === 'Delivery' && !this.state.fAddr.trim(), addrInvalid: String(this.state.tried && this.state.fPref === 'Delivery' && !this.state.fAddr.trim()),
+      addrLine: this.state.tried && this.state.fPref === 'Delivery' && !this.state.fAddr.trim() ? '#c0164f' : 'rgba(0,0,0,.18)',
+      prefOpts: ['Pickup', 'Delivery'].map(o => { const on = this.state.fPref === o; return { label: o, on: String(on), bg: on ? '#000' : '#fff', fg: on ? '#fff' : '#000', line: on ? '#000' : 'rgba(0,0,0,.18)', pick: () => this.setState({ fPref: o }) }; }),
+      prefHint: this.state.fPref === 'Pickup' ? 'Pick up from 300, 5th Cross Rd, 6th Block, Koramangala.' : 'We deliver around Bengaluru. Delivery charges are confirmed on WhatsApp.',
+      sendOrder: e => {
+        if (e && e.preventDefault) e.preventDefault();
+        const st = this.state, name = st.fName.trim(), addr = st.fAddr.trim(), notes = st.fNotes.trim();
+        if (!name || (st.fPref === 'Delivery' && !addr)) { this.setState({ tried: true }); const el = document.getElementById(!name ? 'gsd-name' : 'gsd-addr'); el && el.focus(); return; }
+        const lines = ['Hi Got Some Dough! I would like to place an order:', ''];
+        let n = 0;
+        this.cookies.forEach(c => { const q = st.cart[c.name]; if (q) { n++; lines.push(n + '. ' + c.name + ' × ' + q + ' — ₹' + (q * PRICE).toLocaleString('en-IN')); } });
+        st.cartBoxes.forEach(bx => { n++; lines.push(n + '. Box of ' + bx.size + ' × 1 — ₹' + bx.price.toLocaleString('en-IN'));
+          Object.entries(bx.items).forEach(([f, q]) => lines.push('   • ' + f + ' × ' + q)); });
+        lines.push('', 'Total: ₹' + cartSum.toLocaleString('en-IN'), '', 'Name: ' + name, 'Preference: ' + st.fPref);
+        if (st.fPref === 'Delivery') lines.push('Address: ' + addr);
+        lines.push('Notes: ' + (notes || 'None'), '', 'Please confirm availability and next steps.');
+        window.open('https://wa.me/918722201666?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+      },
+      // alternating A/B keyframe names restart the animation each time the count changes
+      fnCartBg: cartCount ? '#ee2b76' : '#fff', fnCartFg: cartCount ? '#fff' : '#000',
+      fnCountFlip: cartCount ? ((cartCount % 2 ? 'gsdCountA' : 'gsdCountB') + ' .45s cubic-bezier(.2,.8,.2,1)') : 'none',
+      fnCartPop: cartCount ? ((cartCount % 2 ? 'gsdPopA' : 'gsdPopB') + ' .45s cubic-bezier(.2,.8,.2,1)') : 'none',
+      cartCount, cartLabel: 'Open cart, ' + cartCount + (cartCount === 1 ? ' item' : ' items'),
+      openCart: () => this.setState({ cartOpen: true, menuOpen: false }),
+      closeCart: () => this.setState({ cartOpen: false }),
+      cartX: this.state.cartOpen ? '0' : '100%', cartVis: this.state.cartOpen ? 'visible' : 'hidden', cartFade: this.state.cartOpen ? 1 : 0,
+      cartItems, cartEmpty: cartItems.length === 0, cartHas: cartItems.length > 0, cartTotal: cartSum.toLocaleString('en-IN'),
+      isDesktop: w >= 810, isCompact: w < 810, menuOpen, menuIcon: menuOpen ? 'CLOSE' : 'MENU',
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      filters: tags.map(t => ({ label: t, bg: filter === t ? '#000' : '#fff', fg: filter === t ? '#fff' : '#000', pick: () => this.setState({ filter: t }) })),
+      shown: this.cookies.map((c, i) => ({ ...c, r: ((i * 37) % 21 - 10),
+        isAdded: this.state.added === c.name, notAdded: this.state.added !== c.name,
+        addLabel: this.state.added === c.name ? c.name + ' added to cart' : 'Add ' + c.name + ' to cart',
+        add: () => { this.setState(s => ({ added: c.name, cart: { ...s.cart, [c.name]: (s.cart[c.name] || 0) + 1 } })); clearTimeout(this.addT); this.addT = setTimeout(() => this.setState({ added: '' }), 1400); } })),
+      ingredients: [
+        { t: 'Thoughtfully sourced', d: 'We’re picky about what goes into our dough. You can taste it in the first bite.' },
+        { t: 'The good kind of gooey', d: 'The first bite crunches a little. Then you hit the middle.' },
+        { t: 'Always eggless', d: 'Every cookie we bake is 100% vegetarian and eggless.' },
+        { t: 'Small-batch bakes', d: 'Baked fresh in small batches at our Koramangala bakehouse.' }
+      ],
+      // GSD-BOX: each box card flips to a flavour picker
+      boxes: [
+        { size: 4, n: '04', t: 'Box of 4', d: 'Four cookies. Your call.', priceN: 700, bg: '#faf7f0', fg: '#000', btnBg: '#ee2b76', btnFg: '#fff', dotBg: 'rgba(255,255,255,.22)', accent: '#ee2b76', chipBg: '#fff', slotLine: 'rgba(0,0,0,.25)' },
+        { size: 8, n: '08', t: 'Box of 8', d: 'Eight cookies. Plenty to share.', priceN: 1200, bg: '#ee2b76', fg: '#fff', btnBg: '#fff', btnFg: '#ee2b76', dotBg: 'rgba(238,43,118,.12)', accent: '#fff', chipBg: 'rgba(255,255,255,.16)', slotLine: 'rgba(255,255,255,.6)' }
+      ].map(bx => {
+        const sel = this.state.build[bx.size] || {}, picked = Object.values(sel).reduce((a, q) => a + q, 0), full = picked >= bx.size;
+        const setSel = fn => this.setState(s => ({ build: { ...s.build, [bx.size]: fn({ ...(s.build[bx.size] || {}) }) } }));
+        const brk = this.state.breaking && this.state.breaking.size === bx.size ? this.state.breaking.idx : -1;
+        const slots = []; this.cookies.forEach((c, i) => { for (let q = 0; q < (sel[c.name] || 0); q++) { const k = slots.length;
+          slots.push({ on: true, img: c.img, r: ((i * 37) % 21 - 10), whole: k !== brk, breaking: k === brk, label: 'Remove ' + c.name + ' from the box',
+            remove: () => { if (this.state.breaking) return; this.setState({ breaking: { size: bx.size, idx: k } });
+              this.brkT = setTimeout(() => this.setState(s => { const o = { ...(s.build[bx.size] || {}) }; if (o[c.name] > 1) o[c.name]--; else delete o[c.name];
+                return { breaking: null, build: { ...s.build, [bx.size]: o } }; }), 480); } }); } });
+        while (slots.length < bx.size) slots.push({ on: false, img: '', r: 0 });
+        const flipped = !!this.state.flip[bx.size];
+        return { ...bx, price: '₹' + bx.priceN.toLocaleString('en-IN'), flipped: flipped ? 'true' : 'false', notFlipped: flipped ? 'false' : 'true', rot: flipped ? 180 : 0,
+          open: () => this.setState(s => ({ flip: { ...s.flip, [bx.size]: true } })),
+          close: () => this.setState(s => ({ flip: { ...s.flip, [bx.size]: false } })),
+          slots, slotCols: 'repeat(' + bx.size + ',minmax(0,34px))', picked, progress: picked + ' of ' + bx.size + ' cookies picked',
+          notFull: !full, isFull: full, addLabel: full ? 'Add to cart' : 'Pick ' + (bx.size - picked) + ' more',
+          picks: this.cookies.map((c, i) => { const q = sel[c.name] || 0; return { name: c.name, img: c.img, qty: q, r: ((i * 37) % 21 - 10),
+            inc: () => setSel(o => { const t = Object.values(o).reduce((a, x) => a + x, 0); if (t < bx.size) o[c.name] = (o[c.name] || 0) + 1; return o; }),
+            dec: () => setSel(o => { if (o[c.name] > 1) o[c.name]--; else delete o[c.name]; return o; }),
+            noDec: q === 0, decO: 1, noInc: full, incO: full ? .35 : 1,
+            incLabel: 'Add a ' + c.name + ' to the box', decLabel: 'Remove a ' + c.name + ' from the box' }; }),
+          surprise: () => setSel(o => { let t = Object.values(o).reduce((a, x) => a + x, 0); while (t < bx.size) { const c = this.cookies[Math.floor(Math.random() * this.cookies.length)]; o[c.name] = (o[c.name] || 0) + 1; t++; } return o; }),
+          addBox: () => { if (!full) return; this.setState(s => ({ cartBoxes: [...s.cartBoxes, { id: Date.now(), size: bx.size, price: bx.priceN, items: { ...sel } }], build: { ...s.build, [bx.size]: {} }, flip: { ...s.flip, [bx.size]: false } }));
+            clearTimeout(this.boxT); this.boxT = setTimeout(() => this.setState({ cartOpen: true }), 650); } };
+      }) /* GSD-BOX end */
+    };
+  }
+}
+</script>
+</body>
+</html>
