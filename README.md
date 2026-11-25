@@ -86,7 +86,7 @@ Search (⌘F) for:
 ## Before going live — checklist
 - [ ] **Font licence:** `mont-heavy.otf` is the *DEMO* version — buy the commercial web licence for Mont (Heavy + Regular) and swap the file (keep the same name). Check Comalle's licence covers web use.
 - [ ] **Instagram handle:** currently `@gotsomedough` (placeholder) — search `instagram.com/gotsomedough`.
-- [ ] **Email:** currently `hello@gotsomedough.com` (placeholder) — search `hello@`.
+- [x] **Email:** gotsomedough@gmail.com
 - [ ] **Photo rights:** confirm rights for `sections/ingredients-flatlay.jpg`; `cookie-biscoff.webp` shows the Lotus logo.
 - [ ] Test an order end-to-end on a phone (WhatsApp opens with the message).
 - [ ] Optional: add Google Analytics / Meta Pixel if you want visit tracking.
@@ -101,4 +101,4 @@ Search (⌘F) for:
 ## Domains
 - **Primary:** https://gotsomedough.com (canonical URL and share-preview image point here).
 - **gotsomedough.in** and **www.** versions redirect to https://gotsomedough.com.
-- Email for @gotsomedough.com runs on Google Workspace (MX, SPF, DKIM records must be kept in DNS).
+- Contact email: gotsomedough@gmail.com (plain Gmail — no email DNS records needed for the domain).

@@ -1,0 +1,8 @@
+// Cloudflare Workers config: serves this folder as a static website (no build step).
+{
+  "name": "gotsomedough",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./"
+  }
+}
