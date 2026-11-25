@@ -262,6 +262,38 @@ class Component extends DCLogic {
     { name: 'Oatmeal Raisin', img: './cookie-oatmeal-raisin.webp' },
     { name: 'Pistachio Chocolate', img: './cookie-pistachio-chocolate.webp' }
   ];
+  // GSD-FLY: the cookie hops from its card into whichever cart button is on screen; the count ticks up as it lands
+  flyToCart(btn, done) {
+    try {
+      if (!btn || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
+      const card = btn.closest('article'), src = card && card.querySelector('img');
+      const vis = b => { const r = b.getBoundingClientRect(); if (!r.width || r.bottom < 0 || r.top > innerHeight) return false; const el = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return !!el && b.contains(el); };
+      const dest = [...document.querySelectorAll('button[aria-label^="Open cart"]')].reverse().find(vis);
+      if (!src || !dest) return false;
+      const a = src.getBoundingClientRect(), b = dest.getBoundingClientRect();
+      const size = Math.min(a.width, 160), x0 = a.left + a.width / 2 - size / 2, y0 = a.top + a.height / 2 - size / 2;
+      const dx = b.left + b.width / 2 - (x0 + size / 2), dy = b.top + b.height / 2 - (y0 + size / 2);
+      const outer = document.createElement('div'), inner = document.createElement('img');
+      outer.setAttribute('aria-hidden', 'true');
+      outer.style.cssText = 'position:fixed;left:' + x0 + 'px;top:' + y0 + 'px;width:' + size + 'px;height:' + size + 'px;z-index:9999;pointer-events:none';
+      inner.src = src.currentSrc || src.src; inner.alt = '';
+      inner.style.cssText = 'width:100%;height:100%;object-fit:contain;display:block';
+      outer.appendChild(inner); document.body.appendChild(outer);
+      const T = 720, lift = Math.min(140, Math.abs(dy) * .35 + 60);
+      outer.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(' + dx + 'px)' }], { duration: T, easing: 'cubic-bezier(.45,0,.55,1)', fill: 'forwards' });
+      inner.animate([
+        { transform: 'translateY(0) scale(1) rotate(0deg)', opacity: 1 },
+        { transform: 'translateY(' + (-lift) + 'px) scale(.62) rotate(-90deg)', opacity: 1, offset: .35 },
+        { transform: 'translateY(' + dy + 'px) scale(.14) rotate(-260deg)', opacity: .85 }
+      ], { duration: T, easing: 'cubic-bezier(.3,0,.7,1)', fill: 'forwards' }).onfinish = () => {
+        outer.remove(); done();
+        dest.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.18)' }, { transform: 'scale(1)' }], { duration: 380, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      };
+      // the card's own cookie gives a little bounce as it's picked up
+      src.animate([{ scale: 1 }, { scale: .9 }, { scale: 1 }], { duration: 300, easing: 'ease-out' });
+      return true;
+    } catch (err) { return false; }
+  }
   componentDidMount() {
     try { const saved = JSON.parse(localStorage.getItem('gsd-order') || 'null'); if (saved) this.setState(saved); } catch (e) {}
     // reveal section headings as they scroll into view
@@ -456,7 +488,7 @@ class Component extends DCLogic {
       shown: this.cookies.map((c, i) => ({ ...c, r: ((i * 37) % 21 - 10),
         isAdded: this.state.added === c.name, notAdded: this.state.added !== c.name,
         addLabel: this.state.added === c.name ? c.name + ' added to cart' : 'Add ' + c.name + ' to cart',
-        add: () => { this.setState(s => ({ added: c.name, cart: { ...s.cart, [c.name]: (s.cart[c.name] || 0) + 1 } })); clearTimeout(this.addT); this.addT = setTimeout(() => this.setState({ added: '' }), 1400); } })),
+        add: e => { const inc = () => this.setState(s => ({ cart: { ...s.cart, [c.name]: (s.cart[c.name] || 0) + 1 } })); this.setState({ added: c.name }); if (!this.flyToCart(e && e.currentTarget, inc)) inc(); clearTimeout(this.addT); this.addT = setTimeout(() => this.setState({ added: '' }), 1400); } })),
       ingredients: [
         { t: 'Thoughtfully sourced', d: 'We’re picky about what goes into our dough. You can taste it in the first bite.' },
         { t: 'The good kind of gooey', d: 'The first bite crunches a little. Then you hit the middle.' },
