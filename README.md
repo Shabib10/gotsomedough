@@ -52,7 +52,7 @@ Website/
 6. After 1–2 minutes the site is live at `https://<your-username>.github.io/gotsomedough/`.
 
 ### Custom domain (optional)
-1. **Settings → Pages → Custom domain** → enter e.g. `gotsomedough.in` → Save.
+1. **Settings → Pages → Custom domain** → enter e.g. `gotsomedough.com` → Save.
 2. At your domain provider add DNS records:
    - `A` records for `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
    - `CNAME` for `www` → `<your-username>.github.io`
@@ -64,7 +64,7 @@ Edit the file on GitHub (pencil icon) or upload a replacement with the **same fi
 ---
 
 ## How ordering works
-There is no payment system. The cart builds a WhatsApp message and opens a chat with **+91 87222 01666**:
+There is no payment system. The cart builds a WhatsApp message and opens a chat with **+91 87222 01333**:
 - Single cookies are ₹200 each. Box of 4 = ₹700, Box of 8 = ₹1,200 (flavours chosen on the flip card).
 - The customer adds their name, Pickup or Delivery (+ address) and optional notes.
 - **Continue on WhatsApp** opens WhatsApp with the order typed out. The cart is remembered in the browser if they come back.
@@ -76,7 +76,7 @@ Search (⌘F) for:
 | Flavours, names, photos | `cookies = [` |
 | Single cookie price | `PRICE = 200` |
 | Box sizes and prices | `boxes: [` |
-| WhatsApp number | `918722201666` (appears twice: footer link + checkout) |
+| WhatsApp number | `918722201333` (appears twice: footer link + checkout) |
 | Opening hours (Open/Closed badge) | `hr >= 12 && hr < 22` (appears twice) |
 | Ingredients list | `ingredients: [` |
 | Address / maps link | `Koramangala` |
@@ -97,3 +97,8 @@ Search (⌘F) for:
 - The page needs JavaScript (all modern browsers). Content is rendered by `assets/js/runtime/dc-runtime.js`.
 - Visitors who set "reduce motion" on their device get the site without animations.
 - Open/Closed badge and checkout notice use Bengaluru time (Tue–Sun, 12 PM–10 PM; Monday closed).
+
+## Domains
+- **Primary:** https://gotsomedough.com (canonical URL and share-preview image point here).
+- **gotsomedough.in** and **www.** versions redirect to https://gotsomedough.com.
+- Email for @gotsomedough.com runs on Google Workspace (MX, SPF, DKIM records must be kept in DNS).
