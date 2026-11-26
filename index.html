@@ -528,7 +528,7 @@ class Component extends DCLogic {
         const flipped = !!this.state.flip[bx.size];
         return { ...bx, hasPct: !!bx.savePct, saveLabel: 'Save ' + bx.saveAmt + (bx.savePct ? ', ' + bx.savePct + '% off' : ''), wasLabel: 'Was ' + bx.was, price: '₹' + bx.priceN.toLocaleString('en-IN'), flipped: flipped ? 'true' : 'false', notFlipped: flipped ? 'false' : 'true', rot: flipped ? 180 : 0,
           open: () => this.setState(s => ({ flip: { ...s.flip, [bx.size]: true } })),
-          close: () => this.setState(s => ({ flip: { ...s.flip, [bx.size]: false }, swap: s.swap && s.swap.size === bx.size ? null : s.swap })),
+          close: () => this.setState(s => ({ flip: { ...s.flip, [bx.size]: false } })), /* the cart link stays until the box is added, so cart removals keep emptying it */
           slots, slotCols: 'repeat(' + bx.size + ',minmax(0,34px))', picked, progress: picked + ' of ' + bx.size + ' cookies picked',
           notFull: !full, isFull: full, addLabel: full ? 'Add to cart' : 'Pick ' + (bx.size - picked) + ' more',
           picks: this.cookies.map((c, i) => { const q = sel[c.name] || 0; return { name: c.name, img: c.img, qty: q, r: ((i * 37) % 21 - 10),
