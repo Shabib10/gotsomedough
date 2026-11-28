@@ -33,7 +33,7 @@
 <nav style="font-family:'Mont Heavy','Montserrat',sans-serif;display:flex;align-items:center;width:100%;max-width:1100px;font-weight:900;font-size:15px;letter-spacing:.02em">
 <div style="flex:1;display:flex;justify-content:flex-end;gap:48px"><a href="#menu" style="color:#000;text-decoration:none" style-hover="opacity:.6"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_MENU }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">MENU</span></span></a><a href="#ingredients" style="color:#000;text-decoration:none" style-hover="opacity:.6"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_INGREDIENTS }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">INGREDIENTS</span></span></a></div>
 <a href="#top" aria-label="Got Some Dough home" style="width:200px;display:flex;justify-content:center;text-decoration:none"><img src="./assets/images/brand/gsd-logo.svg" alt="Got Some Dough" style="width:120px;height:auto;display:block"></a>
-<div style="flex:1;display:flex;gap:48px"><a href="#gifting" style="color:#000;text-decoration:none" style-hover="opacity:.6"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_GIFTING }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">GIFTING</span></span></a><a href="#story" style="color:#000;text-decoration:none" style-hover="opacity:.6"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_STORY }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">STORY</span></span></a></div>
+<div style="flex:1;display:flex;gap:48px"><sc-if value="{{ boxesOn }}" hint-placeholder-val="{{ true }}"><a href="#gifting" style="color:#000;text-decoration:none" style-hover="opacity:.6"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_GIFTING }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">GIFTING</span></span></a></sc-if><a href="#story" style="color:#000;text-decoration:none" style-hover="opacity:.6"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_STORY }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">STORY</span></span></a></div>
 </nav>
 <button type="button" onClick="{{ openCart }}" aria-label="{{ cartLabel }}" style="font-family:'Mont Heavy','Montserrat',sans-serif;position:absolute;right:clamp(20px,4vw,40px);top:50%;margin-top:-21px;height:42px;width:{{ cartW }};justify-content:center;padding:0 {{ cartPadR }}px 0 {{ cartPadL }}px;border:0;border-radius:999px;background:#fff;color:#000;font-weight:900;font-size:14px;letter-spacing:.02em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.08)" style-hover="transform:translateY(-1px)"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11h17v8.5a1.5 1.5 0 0 1-1.5 1.5H5a1.5 1.5 0 0 1-1.5-1.5z"/><path d="M3.5 11l2.5-4h12l2.5 4"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7"/><path d="M9.5 14.5c1.4 1.6 3.6 1.6 5 0"/></svg><sc-if value="{{ cartHas }}" hint-placeholder-val="{{ false }}"><span class="gsd-c" style="min-width:10px;font-size:15px;letter-spacing:0;color:#000">{{ cartCount }}</span></sc-if></button>
 </sc-if>
@@ -47,7 +47,7 @@
 </header>
 <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
 <div style="font-family:'Mont Heavy','Montserrat',sans-serif;position:fixed;inset:0;z-index:19;background:#ee2b76;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;font-weight:900;font-size:44px;letter-spacing:-.02em">
-<a href="#menu" onClick="{{ closeMenu }}" style="color:#fff;text-decoration:none"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_MENU }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">MENU</span></span></a><a href="#ingredients" onClick="{{ closeMenu }}" style="color:#fff;text-decoration:none"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_INGREDIENTS }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">INGREDIENTS</span></span></a><a href="#gifting" onClick="{{ closeMenu }}" style="color:#fff;text-decoration:none"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_GIFTING }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">GIFTING</span></span></a><a href="#story" onClick="{{ closeMenu }}" style="color:#fff;text-decoration:none"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_STORY }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">STORY</span></span></a>
+<a href="#menu" onClick="{{ closeMenu }}" style="color:#fff;text-decoration:none"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_MENU }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">MENU</span></span></a><a href="#ingredients" onClick="{{ closeMenu }}" style="color:#fff;text-decoration:none"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_INGREDIENTS }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">INGREDIENTS</span></span></a><sc-if value="{{ boxesOn }}" hint-placeholder-val="{{ true }}"><a href="#gifting" onClick="{{ closeMenu }}" style="color:#fff;text-decoration:none"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_GIFTING }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">GIFTING</span></span></a></sc-if><a href="#story" onClick="{{ closeMenu }}" style="color:#fff;text-decoration:none"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_STORY }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">STORY</span></span></a>
 </div>
 </sc-if>
 
@@ -156,8 +156,8 @@
 </div></div>
 </section>
 
-<!-- GIFTING -->
-<section id="gifting" style="background:#f9c9af;padding:clamp(56px,9vw,120px) clamp(20px,5vw,64px)">
+<!-- GIFTING (shown only when giftBoxesOn = true) -->
+<sc-if value="{{ boxesOn }}" hint-placeholder-val="{{ true }}"><section id="gifting" style="background:#f9c9af;padding:clamp(56px,9vw,120px) clamp(20px,5vw,64px)">
 <div style="max-width:1200px;margin:0 auto">
 <h2 class="gsd-reveal" style="font-family:'Mont Heavy','Montserrat',sans-serif;margin:0 0 0;font-weight:900;font-size:clamp(36px,6vw,72px);line-height:1;letter-spacing:-.035em"><span class="gsd-line">Treat for friends.</span><span class="gsd-line">And more.</span></h2>
 <div style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
@@ -198,7 +198,7 @@
 </div>
 </div></sc-for>
 </div></div>
-</section>
+</section></sc-if>
 
 <!-- INGREDIENTS -->
 <section id="ingredients" style="background:#faf7f0;color:#000;padding:clamp(56px,9vw,120px) clamp(20px,5vw,64px)">
@@ -235,7 +235,7 @@
 <nav aria-label="Footer" style="display:flex;flex-direction:column;gap:14px;font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;font-size:15px;letter-spacing:.02em">
 <a href="#menu" style="color:#fff;text-decoration:none" style-hover="color:#000"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_MENU }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">MENU</span></span></a>
 <a href="#ingredients" style="color:#fff;text-decoration:none" style-hover="color:#000"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_INGREDIENTS }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">INGREDIENTS</span></span></a>
-<a href="#gifting" style="color:#fff;text-decoration:none" style-hover="color:#000"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_GIFTING }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">GIFTING</span></span></a>
+<sc-if value="{{ boxesOn }}" hint-placeholder-val="{{ true }}"><a href="#gifting" style="color:#fff;text-decoration:none" style-hover="color:#000"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_GIFTING }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">GIFTING</span></span></a></sc-if>
 <a href="#story" style="color:#fff;text-decoration:none" style-hover="color:#000"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_STORY }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">STORY</span></span></a>
 </nav>
 <div style="display:flex;flex-direction:column;gap:32px">
@@ -268,6 +268,11 @@
 <script>(function(){var t=document.getElementById("gsd-dc-tpl"),x=document.createElement("x-dc");Object.defineProperty(x,"innerHTML",{get:function(){var c=t.content.querySelector("x-dc");return c?c.innerHTML:""}});t.parentNode.insertBefore(x,t)})();</script>
 <script type="text/x-dc" data-dc-script data-props="{&quot;pink&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#ee2b76&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tilt3d&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
 class Component extends DCLogic {
+  // ================= GIFT BOXES SWITCH =================
+  // false = Gifting section, box builder, Gifting menu links and the cart's "make it a box" nudge are hidden.
+  // true  = everything box-related comes back exactly as built (stickers, flip builder, cart nudge, box-from-cart).
+  giftBoxesOn = false;
+  // =====================================================
   state = { w: 1280, idx: 0, menuOpen: false, filter: 'All', added: '', cart: {}, cartOpen: false, fnShow: false, active: '', build: { 4: {}, 8: {} }, flip: { 4: false, 8: false }, cartBoxes: [], swap: null, breaking: null /* GSD-BOX */, fName: '', fPref: 'Pickup', fAddr: '', fNotes: '', tried: false };
   // menu: 10 flavours, ₹200 each (photos are transparent PNG cut-outs)
   cookies = [
@@ -340,7 +345,7 @@ class Component extends DCLogic {
   }
   componentDidMount() {
     // bring back a cart from the last 24 hours (e.g. after hopping to WhatsApp and back)
-    try { const saved = JSON.parse(localStorage.getItem('gsd-order') || 'null'); if (saved && Date.now() - (saved.savedAt || 0) < 864e5) { delete saved.savedAt; this.setState(saved); } else if (saved) localStorage.removeItem('gsd-order'); } catch (e) {}
+    try { const saved = JSON.parse(localStorage.getItem('gsd-order') || 'null'); if (saved && Date.now() - (saved.savedAt || 0) < 864e5) { delete saved.savedAt; if (!this.giftBoxesOn) saved.cartBoxes = []; this.setState(saved); } else if (saved) localStorage.removeItem('gsd-order'); } catch (e) {}
     // reveal section headings as they scroll into view
     document.documentElement.classList.add('gsd-js');
     // checks the live headings on every scroll/update (robust if the page re-renders a heading)
@@ -469,7 +474,7 @@ class Component extends DCLogic {
       stageH: size + 110 + 36, off: 36, halfOff: size / 2 + 36, heroPad: w >= 810 ? 183 : 166,
       fnY: this.state.fnShow ? '0' : '140%', fnO: this.state.fnShow ? 1 : 0, fnVis: this.state.fnShow ? 'visible' : 'hidden',
       fnPad: w < 480 ? 9 : 16, fnFont: w < 480 ? 11 : 13,
-      fnLinks: [['menu', 'MENU'], ['ingredients', 'INGREDIENTS'], ['gifting', 'GIFTING'], ['story', 'STORY']].map(([id, label]) => {
+      fnLinks: [['menu', 'MENU'], ['ingredients', 'INGREDIENTS'], ['gifting', 'GIFTING'], ['story', 'STORY']].filter(([id]) => this.giftBoxesOn || id !== 'gifting').map(([id, label]) => {
         const on = this.state.active === id;
         return { href: '#' + id, label, letters: [...label].map(ch => ({ ch, dl: 0 })) /* GSD-FLIP */, current: on ? 'location' : 'false', bg: on ? '#ee2b76' : 'transparent', fg: on ? '#fff' : '#000',
           go: () => { this.navLock = Date.now() + 1200; this.setState({ active: id, fnShow: true }); } };
@@ -494,7 +499,7 @@ class Component extends DCLogic {
       listScroll: e => { const el = e.currentTarget; if (el.scrollTop + el.clientHeight >= el.scrollHeight - 4) el.setAttribute('data-end', ''); else el.removeAttribute('data-end'); },
       // checkout → pre-drafted WhatsApp message to +91 87222 01666
       cartTitle: cartItems.length ? 'Looking good.' : 'Your cart',
-      hasNudge: !!nudge, nudgeTxt: nudge ? nudge.txt : '', nudgeCta: nudge ? nudge.cta : '', nudgeMore: !!(nudge && nudge.more), nudgeSwap: !!(nudge && !nudge.more), nudgeAct: nudge && nudge.act ? nudge.act : () => {},
+      boxesOn: this.giftBoxesOn, hasNudge: this.giftBoxesOn && !!nudge, nudgeTxt: nudge ? nudge.txt : '', nudgeCta: nudge ? nudge.cta : '', nudgeMore: !!(nudge && nudge.more), nudgeSwap: !!(nudge && !nudge.more), nudgeAct: nudge && nudge.act ? nudge.act : () => {},
       shopClosed: (() => { const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', weekday: 'short', hour: 'numeric', hour12: false }).formatToParts(new Date());
         const day = parts.find(x => x.type === 'weekday').value, hr = +parts.find(x => x.type === 'hour').value % 24; return !(day !== 'Mon' && hr >= 12 && hr < 22); })(),
       fName: this.state.fName, fAddr: this.state.fAddr, fNotes: this.state.fNotes,
