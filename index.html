@@ -253,7 +253,7 @@
 <a href="mailto:gotsomedough@gmail.com" style="display:inline-block;margin-top:14px;color:#000;text-decoration:none;font-size:16px;line-height:1.6;font-weight:500" style-hover="color:#fff">gotsomedough@gmail.com</a></div>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px">
 <a href="https://maps.app.goo.gl/hN2Ru8MAbU57mpct7" aria-label="Get directions: see Got Some Dough on Google Maps (opens in a new tab)" target="_blank" rel="noopener" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;display:inline-flex;align-items:center;gap:12px;height:50px;padding:0 22px;border-radius:999px;background:#fff;color:#ee2b76;text-decoration:none;font-size:14px;text-transform:uppercase;letter-spacing:.02em" style-hover="background:#000;color:#fff"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_get_directions }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">Get directions</span></span></a>
-<a href="https://wa.me/918722201333" target="_blank" rel="noopener" aria-label="WhatsApp us (opens WhatsApp)" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;color:#fff;font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none" style-hover="color:#000"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_whatsapp_us }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">WhatsApp us</span></span></a>
+<a href="https://wa.me/918722201666" target="_blank" rel="noopener" aria-label="WhatsApp us (opens WhatsApp)" style="font-family:'Mont Heavy','Montserrat',sans-serif;font-weight:900;color:#fff;font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none" style-hover="color:#000"><span class="gsd-c"><span class="gsd-flip" aria-hidden="true"><sc-for list="{{ fx_whatsapp_us }}" as="L" hint-placeholder-count="6"><span class="fl"><span data-ch="{{ L.ch }}" style="transition-delay:{{ L.dl }}ms">{{ L.ch }}</span></span></sc-for></span><span class="gsd-sr">WhatsApp us</span></span></a>
 </div>
 </div>
 </div>
@@ -492,7 +492,7 @@ class Component extends DCLogic {
       ...(() => { const fl = t => [...t].map((ch, i) => ({ ch: ch === ' ' ? '\u00a0' : ch, dl: 0 }));
         return { fx_menuIcon: fl(menuOpen ? 'CLOSE' : 'MENU'), fx_MENU: fl('MENU'), fx_INGREDIENTS: fl('INGREDIENTS'), fx_GIFTING: fl('GIFTING'), fx_STORY: fl('STORY'), fx_pick_a_cookie: fl('Pick a cookie'), fx_checkout: fl('Checkout'), fx_order_now: fl('order now'), fx_build_your_box: fl('Build your box'), fx_get_directions: fl('Get directions'), fx_whatsapp_us: fl('WhatsApp us'),  }; })(),
       listScroll: e => { const el = e.currentTarget; if (el.scrollTop + el.clientHeight >= el.scrollHeight - 4) el.setAttribute('data-end', ''); else el.removeAttribute('data-end'); },
-      // checkout → pre-drafted WhatsApp message to +91 87222 01333
+      // checkout → pre-drafted WhatsApp message to +91 87222 01666
       cartTitle: cartItems.length ? 'Looking good.' : 'Your cart',
       hasNudge: !!nudge, nudgeTxt: nudge ? nudge.txt : '', nudgeCta: nudge ? nudge.cta : '', nudgeMore: !!(nudge && nudge.more), nudgeSwap: !!(nudge && !nudge.more), nudgeAct: nudge && nudge.act ? nudge.act : () => {},
       shopClosed: (() => { const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', weekday: 'short', hour: 'numeric', hour12: false }).formatToParts(new Date());
@@ -518,7 +518,7 @@ class Component extends DCLogic {
         lines.push('', 'Total: ₹' + cartSum.toLocaleString('en-IN'), '', 'Name: ' + name, 'Preference: ' + st.fPref);
         if (st.fPref === 'Delivery') lines.push('Address: ' + addr);
         lines.push('Notes: ' + (notes || 'None'), '', 'Please confirm availability and next steps.');
-        window.open('https://wa.me/918722201333?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+        window.open('https://wa.me/918722201666?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
       },
       // alternating A/B keyframe names restart the animation each time the count changes
       fnCartBg: cartCount ? '#ee2b76' : '#fff', fnCartFg: cartCount ? '#fff' : '#000',
